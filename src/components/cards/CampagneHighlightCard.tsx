@@ -16,13 +16,8 @@ export function CampagneHighlightCard({ campagne }: CampagneHighlightCardProps) 
       to={`/campagnes/${campagne.id}/don`}
       className="group relative block overflow-hidden rounded-[22px] border border-gray-100/80 bg-white shadow-[0_16px_40px_-16px_rgba(15,110,86,0.25)] active:scale-[0.99] transition-transform"
     >
-      <div className="relative h-44 overflow-hidden">
-        <SafeImage
-          src={campagne.image}
-          alt={campagne.titre}
-          className="h-full w-full object-cover transition-transform duration-500 group-active:scale-105"
-          fallbackLabel={campagne.titre}
-        />
+      <div className="relative aspect-[16/9] w-full overflow-hidden bg-teal-light">
+        <SafeImage src={campagne.image} alt={campagne.titre} fill fallbackLabel={campagne.titre} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#032821] via-[#04342c]/35 to-transparent" />
         <span className="absolute left-4 top-4 rounded-full bg-[#E67E22] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-lg">
           Collecte active

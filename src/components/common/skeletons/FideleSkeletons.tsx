@@ -5,11 +5,11 @@ export function ParishCardSkeleton({ compact = false }: { compact?: boolean }) {
     <div
       className={[
         'block shrink-0 overflow-hidden rounded-[22px] border border-gray-100 bg-white shadow-sm',
-        compact ? 'min-w-[272px]' : 'w-full',
+        compact ? 'w-[min(280px,calc(100vw-2rem))] shrink-0 self-start' : 'w-full self-start',
       ].join(' ')}
       aria-hidden
     >
-      <Skeleton className={compact ? 'h-[148px] w-full' : 'h-44 w-full'} rounded="none" />
+      <Skeleton className={compact ? 'aspect-[5/3] w-full' : 'aspect-[16/9] w-full'} rounded="none" />
       <div className={compact ? 'space-y-2 p-3.5' : 'space-y-2 p-4'}>
         <Skeleton className="h-4 w-3/4" rounded="md" />
         <div className="flex justify-between gap-2">
@@ -24,7 +24,7 @@ export function ParishCardSkeleton({ compact = false }: { compact?: boolean }) {
 export function CampagneHighlightSkeleton() {
   return (
     <div className="overflow-hidden rounded-[22px] border border-gray-100 bg-white shadow-sm" aria-hidden>
-      <Skeleton className="h-44 w-full" rounded="none" />
+      <Skeleton className="aspect-[16/9] w-full" rounded="none" />
       <div className="relative -mt-6 mx-4 space-y-3 rounded-2xl border border-gray-100 bg-white p-4 shadow-lg">
         <div className="flex justify-between gap-2">
           <Skeleton className="h-10 w-1/3" rounded="md" />
@@ -95,7 +95,7 @@ export function HomeFeedSkeleton() {
       </div>
       <div>
         <Skeleton className="mb-3 h-5 w-44" rounded="md" />
-        <div className="-mx-4 flex gap-3 overflow-hidden px-4">
+        <div className="-mx-4 flex items-start gap-3 overflow-hidden px-4">
           <ParishCardSkeleton compact />
           <ParishCardSkeleton compact />
           <ParishCardSkeleton compact />

@@ -103,7 +103,7 @@ export default function HomePage() {
             {featuredParoisses.length > 0 ? (
               <section>
                 <SectionTitle title="Paroisses près de vous" actionLabel="Tout voir" actionTo="/paroisses" />
-                <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 snap-x snap-mandatory scrollbar-hide">
+                <div className="-mx-4 flex items-start gap-3 overflow-x-auto px-4 pb-1 snap-x snap-mandatory scrollbar-hide">
                   {featuredParoisses.map((p) => (
                     <ParishCard key={p.id} paroisse={p} compact featured />
                   ))}

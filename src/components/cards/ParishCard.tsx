@@ -29,16 +29,16 @@ export function ParishCard({
       className={[
         'group relative block overflow-hidden rounded-[22px] border border-gray-100/80 bg-white',
         'shadow-[0_14px_36px_-14px_rgba(15,110,86,0.22)] active:scale-[0.98] transition-all duration-200',
-        isCompact ? 'min-w-[272px] snap-start shrink-0' : 'w-full',
+        isCompact ? 'w-[min(280px,calc(100vw-2rem))] shrink-0 snap-start self-start' : 'w-full self-start',
       ].join(' ')}
     >
-      <div className={`relative overflow-hidden ${isCompact ? 'h-[148px]' : 'h-44'}`}>
+      <div
+        className={`relative w-full overflow-hidden bg-teal-light ${isCompact ? 'aspect-[5/3]' : 'aspect-[16/9]'}`}
+      >
         <SafeImage
           src={paroisse.image}
           alt={paroisse.nom}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] group-active:scale-105"
-          width={400}
-          height={176}
+          fill
           fallbackLabel={paroisse.nom}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#032821]/95 via-[#04342c]/35 to-transparent" />
