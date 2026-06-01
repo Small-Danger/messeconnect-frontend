@@ -7,6 +7,7 @@ import { ParishCard } from '../../components/cards/ParishCard';
 import { HomeFeedSkeleton } from '../../components/common/skeletons/FideleSkeletons';
 import { SectionTitle } from '../../components/common/SectionTitle';
 import { MesseConnectLogo } from '../../components/common/MesseConnectLogo';
+import { HomeAboutSection } from '../../components/home/HomeAboutSection';
 import { HomeHero } from '../../components/home/HomeHero';
 import { QuickActionCard } from '../../components/home/QuickActionCard';
 import { MobileLayout } from '../../components/layout/MobileLayout';
@@ -110,6 +111,8 @@ export default function HomePage() {
                 </div>
               </section>
             ) : null}
+
+            <HomeAboutSection />
           </>
         )}
       </div>
