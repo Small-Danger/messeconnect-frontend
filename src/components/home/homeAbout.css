@@ -1,0 +1,30 @@
+@keyframes mc-about-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.mc-about-glow {
+  animation: mc-about-glow 5s ease-in-out infinite;
+}
+
+@keyframes mc-about-shine {
+  0% {
+    transform: translateX(-100%) skewX(-10deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-10deg);
+  }
+}
+
+.mc-about-shine {
+  animation: mc-about-shine 5.5s ease-in-out infinite;
+}
