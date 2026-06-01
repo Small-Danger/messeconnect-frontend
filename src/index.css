@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-800 font-sans;
+    margin: 0;
+    min-height: 100svh;
+  }
+
+  #root {
+    min-height: 100svh;
+  }
+
+  button,
+  a,
+  [role='button'] {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes mc-shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .mc-shimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(229 231 235 / 0.85);
+  }
+
+  .mc-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(255 255 255 / 0.55),
+      transparent
+    );
+    animation: mc-shimmer 1.4s ease-in-out infinite;
+  }
+
+  @keyframes mc-blur-reveal {
+    from {
+      opacity: 0;
+      filter: blur(6px);
+      transform: scale(1.01);
+    }
+
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
+  }
+
+  .mc-blur-reveal {
+    opacity: 0;
+    animation: mc-blur-reveal 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes mc-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mc-fade-up {
+    opacity: 0;
+    animation: mc-fade-up 0.5s ease-out forwards;
+  }
+
+  .mc-fade-up-delay-1 {
+    animation-delay: 0.15s;
+  }
+
+  .mc-fade-up-delay-2 {
+    animation-delay: 0.3s;
+  }
+}
+
+/* FullCalendar paroisse — HTML natif (évite conflits React 19 / DOM) */
+.mc-fc-root .mc-fc-day-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  padding: 2px 4px 0 0;
+}
+
+.mc-fc-root .mc-fc-day-num {
+  font-size: inherit;
+  line-height: 1.2;
+}
+
+.mc-fc-root .mc-fc-day-badge {
+  margin-top: 2px;
+  border-radius: 9999px;
+  background: rgb(204 251 241);
+  color: rgb(15 110 86);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 0 6px;
+  line-height: 16px;
+}
+
+.mc-fc-root .mc-fc-day-badge--amber {
+  background: rgb(254 243 199);
+  color: rgb(146 64 14);
+}
+
+.mc-fc-root .mc-fc-event {
+  padding: 2px 4px;
+  font-size: 11px;
+  line-height: 1.25;
+  overflow: hidden;
+}
+
+.mc-fc-root .mc-fc-event-title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mc-fc-root .mc-fc-event-meta {
+  display: flex;
+  gap: 4px;
+  margin-top: 2px;
+  flex-wrap: wrap;
+}
+
+.mc-fc-root .mc-fc-event-pill {
+  border-radius: 4px;
+  background: rgb(255 255 255 / 0.25);
+  padding: 0 4px;
+  font-size: 10px;
+}
+
+.mc-fc-root .mc-fc-event-pill--amber {
+  background: rgb(251 191 36 / 0.9);
+  color: rgb(69 26 3);
+}

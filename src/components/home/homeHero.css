@@ -1,0 +1,13 @@
+@keyframes mc-hero-shine {
+  0% {
+    transform: translateX(-120%) skewX(-12deg);
+  }
+
+  100% {
+    transform: translateX(220%) skewX(-12deg);
+  }
+}
+
+.mc-hero-shine {
+  animation: mc-hero-shine 4s ease-in-out infinite;
+}
