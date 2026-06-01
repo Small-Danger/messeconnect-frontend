@@ -1,5 +1,9 @@
+# Node 20.18 (nixpkgs nodejs_20) est trop ancien pour Vite 8 / Rolldown (^20.19.0).
+[variables]
+NODE_VERSION = "22"
+
 [phases.setup]
-nixPkgs = ["nodejs_20"]
+nixPkgs = ["nodejs_22"]
 
 [phases.install]
 cmds = ["npm ci"]
